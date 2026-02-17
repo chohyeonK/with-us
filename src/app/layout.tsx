@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import QueryProvider from "@/components/providers/QueryProvider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -25,12 +26,15 @@ export default function RootLayout({
   return (
     <html lang="ko">
       {/* 한국어 설정 */}
+
       <body className={`${geistSans.variable} antialiased bg-gray-100`}>
-        {/* 전체 배경은 회색으로 줍니다. */}
-        <div className="relative mx-auto min-h-screen max-w-[450px] bg-white shadow-2xl">
-          {/* 중앙에 모바일 사이즈 박스를 고정합니다. */}
-          {children}
-        </div>
+        <QueryProvider>
+          {/* 전체 배경은 회색으로 줍니다. */}
+          <div className="relative mx-auto min-h-screen max-w-[450px] bg-white shadow-2xl">
+            {/* 중앙에 모바일 사이즈 박스를 고정합니다. */}
+            {children}
+          </div>
+        </QueryProvider>
       </body>
     </html>
   );
