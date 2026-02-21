@@ -11,6 +11,7 @@ interface Coords {
 interface Place {
   address: string;
   placeName: string;
+  title?: string;
   operatingTime: string;
   tel: string;
   url: string;
