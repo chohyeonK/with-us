@@ -8,7 +8,7 @@ export const usePlaces = () => {
     queryFn: async () => {
       // 키가 없을 경우를 대비한 얼리 리턴
       if (!serviceKidsKey) {
-        console.log("API Key가 설정되지 않았습니다.");
+        // console.log("API Key가 설정되지 않았습니다.");
         return [];
       }
       const response = await fetch(
@@ -19,7 +19,7 @@ export const usePlaces = () => {
       if (!response.ok) throw new Error("네트워크 응답에 문제가 있습니다.");
 
       const data = await response.json();
-      console.log("전체 API 응답:", data);
+      // console.log("전체 API 응답:", data);
 
       // API 응답 구조가 'data.response.body.items.item'일 확률이 높으니 확인 필요
       const items = data?.response.body?.items?.item || [];
