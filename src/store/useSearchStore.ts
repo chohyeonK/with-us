@@ -12,6 +12,7 @@ interface Place {
   address: string;
   placeName: string;
   title?: string;
+  issuedDate?: string;
   operatingTime: string;
   tel: string;
   url: string;
